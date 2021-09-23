@@ -1,0 +1,26 @@
+// Define variable
+// $color--gray: #858377;
+// $color--dark: #636057;
+// $color--yellow: #ffdf65;
+
+$light: #858377;
+$dark: #636057;
+$primary: #ffdf65;
+$warning: #ff7851;
+$bg--light: #f8f9fa;
+$body-color: $dark;
+
+// @media (max-width: map-get($grid-breakpoints, sm)) {
+//   .row:not(.no-gutters) {
+//     margin-right: -$grid-gutter-width / 4;
+//     margin-left: -$grid-gutter-width / 4;
+//   }
+//   .row:not(.no-gutters) > .col,
+//   .row:not(.no-gutters) > [class*="col-"] {
+//     padding-right: $grid-gutter-width / 4;
+//     padding-left: $grid-gutter-width / 4;
+//   }
+// }
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";

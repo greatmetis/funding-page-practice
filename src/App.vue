@@ -1,32 +1,40 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Navbar />
+    <Hero />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Hero from '@/components/Hero/Hero.vue'
+import Navbar from '@/components/Hero/Navbar.vue'
 
-#nav {
-  padding: 30px;
+export default {
+  components:{
+    Hero,
+    Navbar,
+  },
+  prop:[],
+  data(){
+    return{
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
     }
   }
 }
+</script>
+
+
+<style lang="scss">
+@import './style/app.scss';
+// Global
+
+.b-icon{
+  margin-right:8px;
+}
+
+#app {
+  
+}
+
+
 </style>
