@@ -4,12 +4,12 @@
     <Hero />
     <SelectionBar />
     <div class="container pb-5">
-      <b-row no-gutters>
+      <b-row>
         <b-col lg="8">
           <router-view></router-view>
           <Form />
         </b-col>
-        <b-col lg="4" class="pl-5">
+        <b-col lg="4">
           <RightSideColumn/>
         </b-col>
       </b-row>
