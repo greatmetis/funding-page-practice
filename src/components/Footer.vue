@@ -29,5 +29,13 @@ $text-color--dark-gray: #494846;
         margin-bottom: 0px;
     }
 }
+@media(max-width:992px){
+    .footer{
+        padding: 16px;
+        p{
+            font-size:0.85rem;
+        }
+    }
+}
 
 </style>

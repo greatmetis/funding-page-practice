@@ -12,7 +12,7 @@
                 </ul>
             </div>
             <div class="right">
-                <Button class="btn-yellow">登入</Button>
+                <Button class="btn-yellow" @btnClick="triggerLoginForm">登入</Button>
                 <Button>註冊</Button>
             </div>
         </div>
@@ -25,6 +25,11 @@ export default {
     name:'navbar',
     components:{
         Button,
+    },
+    methods:{
+        triggerLoginForm(){
+            this.$emit('triggerLoginForm')
+        }
     }
 }
 </script>

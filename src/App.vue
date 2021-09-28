@@ -1,20 +1,24 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar @triggerLoginForm="triggerLoginForm"/>
     <Hero />
     <SelectionBar />
     <div class="container pb-5">
       <b-row>
         <b-col lg="8">
           <router-view></router-view>
-          <Form />
+          <Form/>
         </b-col>
         <b-col lg="4">
           <RightSideColumn/>
         </b-col>
+        <!-- <b-col lg="8">
+          <Form />
+        </b-col> -->
       </b-row>
     </div>
     <Footer />
+    <Login v-if="!logined" @closeLoginForm="closeLoginForm"/>
   </div>
 </template>
 
@@ -25,6 +29,7 @@ import SelectionBar from '@/components/SelectionBar.vue'
 import Form from '@/components/Form.vue'
 import RightSideColumn from '@/components/RightSideColumn.vue'
 import Footer from '@/components/Footer.vue'
+import Login from '@/components/Login.vue'
 export default {
   components:{
     Hero,
@@ -32,14 +37,27 @@ export default {
     SelectionBar,
     Form,
     RightSideColumn,
-    Footer
+    Footer,
+    Login
   },
   prop:[],
   data(){
     return{
-
+      logined:false,
     }
+  },
+  methods:{
+    triggerLoginForm(){
+      this.logined = false
+    },
+    closeLoginForm(){
+      this.logined = true
+    }
+  },
+  computed:{
+
   }
+
 }
 </script>
 

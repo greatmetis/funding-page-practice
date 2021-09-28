@@ -1,5 +1,5 @@
 <template>
-    <a type="button" class="btn">
+    <a type="button" class="btn" @click="btnClick">
         <slot>Button</slot>
     </a>
 
@@ -11,7 +11,7 @@ export default {
     name:'Button',
     methods:{
         btnClick(){
-            console.log('click')
+            this.$emit('btnClick')
         }
     }
 }

@@ -13,11 +13,11 @@
                     text-field="text">
                 </b-form-select>
             </b-form-group>
-            <b-form-group id="input-group-reciever" label="收件人姓名" lebel-for="input-reciever"> 
+            <b-form-group id="input-group-reciever" label="收件人姓名" label-for="input-reciever"> 
                 <b-form-input required id="input-reciever" v-model="reciever"></b-form-input>
                 <b-form-invalid-feedback :state="validName">請輸入收件人姓名</b-form-invalid-feedback>
             </b-form-group>
-            <b-form-group id="input-group-contactNumber" label="聯絡電話" lebel-for="input-contactNumber"> 
+            <b-form-group id="input-group-contactNumber" label="聯絡電話" label-for="input-contactNumber"> 
                 <b-form-input required id="input-contactNumber" v-model="contactNumber"></b-form-input>
                 <b-form-invalid-feedback :state="validContactNumber">請輸入聯絡電話</b-form-invalid-feedback>
             </b-form-group>
