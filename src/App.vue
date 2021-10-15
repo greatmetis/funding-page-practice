@@ -74,16 +74,10 @@ p{
 }
 
 #app {
-  .faq{
-      margin-top: 48px;
-  }
+
 }
 
 
-@media (max-width:425px){
-  .faq{
-    margin-top: 32px;
-  }
-}
+
 
 </style>
