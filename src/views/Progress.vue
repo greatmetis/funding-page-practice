@@ -24,9 +24,12 @@ export default {
     components:{
         ImagePanel,
     },
+    props:{
+        isScreenSmall: Boolean,
+    },
     data(){
         return{
-            isScreenSmall:null,
+            // isScreenSmall:null,
             events:[
                 {
             id:1,
@@ -52,22 +55,22 @@ export default {
             ]
         }
     },
-    methods:{
-        // Mobile detection
-        checkScreen(){
-            const windowWidth = window.innerWidth
-            if(windowWidth <768){
-                this.isScreenSmall = true
-                return 
-            }else{
-                return this.isScreenSmall = false
-            }
-        }
-    },
-    created(){
-        this.checkScreen()
-        window.addEventListener('resize',this.checkScreen)
-    }
+    // methods:{
+    //     // Mobile detection
+    //     checkScreen(){
+    //         const windowWidth = window.innerWidth
+    //         if(windowWidth <768){
+    //             this.isScreenSmall = true
+    //             return 
+    //         }else{
+    //             return this.isScreenSmall = false
+    //         }
+    //     }
+    // },
+    // created(){
+    //     this.checkScreen()
+    //     window.addEventListener('resize',this.checkScreen)
+    // }
 }
 </script>
 

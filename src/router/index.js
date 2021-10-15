@@ -4,6 +4,7 @@ import ProjectIntro from '../views/ProjectIntro.vue'
 import Progress from '../views/Progress.vue'
 import FAQ from '../views/FAQ.vue'
 import Comments from '../views/Comments.vue'
+// import StickyButton from '../views/StickyButton.vue'
 
 Vue.use(VueRouter)
 
@@ -11,7 +12,11 @@ const routes = [
   {
     path: '/',
     name: 'ProjectIntro',
-    component:ProjectIntro,
+    components:{
+      default:ProjectIntro,
+      // helper: StickyButton,
+    },
+    
   },
   {
     path: '/progress',
@@ -27,7 +32,7 @@ const routes = [
     path: '/comments',
     name: 'Comments',
     component:Comments,
-  }
+  },
 ]
 
 const router = new VueRouter({

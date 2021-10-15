@@ -5,7 +5,7 @@
       <h1 class="title">拍出會動的照片｜<span>LivePhotos 魔法拍立得</span></h1>
       <b-row>
         <b-col lg="7" align-self="center" class="left">
-          <ImagePanel imageUrl="product_image"/>
+          <ImagePanel class="img-rounded" imageUrl="product_image"/>
         </b-col>
         <b-col lg="5" class="right">
           <p class="target-number">目標＄600,000</p>
@@ -44,12 +44,12 @@
           </div>
           <b-row class="btn-group" no-gutters>
             <b-col cols="12">
-              <Button class="btn-yellow btn-lg mb-2">贊助專案</Button>
+              <a href="#donate-form"><Button class="btn-yellow btn-lg mb-2">贊助專案</Button></a>
             </b-col>
-            <b-col cols="7">
+            <b-col cols="6" lg="7" class="pr-2">
               <Button class="btn-lg"><b-icon-heart-fill class="icon"></b-icon-heart-fill>追蹤專案</Button>
             </b-col>
-            <b-col cols="5" class="pl-2">
+            <b-col cols="6" lg="5">
               <Button class="btn-lg"><b-icon-share-fill class="icon"></b-icon-share-fill>分享</Button>
             </b-col>
           </b-row>
@@ -104,6 +104,7 @@ $bg--light: #f8f9fa;
     h3{
       margin-bottom: 0;
       line-height:56px;
+      font-weight:700;
     }
     .progressbar{
       position: relative;
@@ -128,36 +129,41 @@ $bg--light: #f8f9fa;
     .icon-group{
       display: flex;
       margin-bottom: 16px;
-      .icon-info{
-        display: flex;
-        margin-right: 25px;
-        position: relative;
-        p{
-          display: none;
-          position: absolute;
-          bottom:32px;
-          left:50%;
-          transform:translateX(-50%);
-          background-color: $dark;
-          color:$primary;
-          padding: 4px 12px;
-          width:88px;
-          border-radius: 4px;
-          text-align:center;
-          &::after{
-            content:'';
+      gap:25px;
+        .icon-info{
+          display: flex;
+          position: relative;
+          img{
             display: block;
-            width:0;
-            height:0;
-            border-left:4px solid transparent;
-            border-bottom:6px solid $dark;
-            border-right:4px solid transparent;
-            position: absolute;
-            bottom:-6px;
-            left:50%;
-            transform: translateX(-50%) rotate(180deg) ;
+            width:24px;
+            height:24px;
           }
-        }
+          p{
+            display: none;
+            position: absolute;
+            bottom:32px;
+            left:50%;
+            transform:translateX(-50%);
+            background-color: $dark;
+            color:$primary;
+            padding: 4px 12px;
+            width:88px;
+            border-radius: 4px;
+            text-align:center;
+            &::after{
+              content:'';
+              display: block;
+              width:0;
+              height:0;
+              border-left:4px solid transparent;
+              border-bottom:6px solid $dark;
+              border-right:4px solid transparent;
+              position: absolute;
+              bottom:-6px;
+              left:50%;
+              transform: translateX(-50%) rotate(180deg) ;
+            }
+          }
         img:hover{
           cursor: pointer;
           &~p{
@@ -183,12 +189,6 @@ $bg--light: #f8f9fa;
         width:20px;
         height:20px;
       }
-      // &:first-child{
-      //   margin-bottom: 8px;
-      // }
-      // &:nth-child(2){
-      //   margin-right: 8px;
-      // }
       
     }
   }
@@ -201,16 +201,34 @@ $bg--light: #f8f9fa;
       margin-bottom: 8px;
     }
     .right{
+      .target-number{
+        margin-top:16px;
+      }
       .icon-group{
         display: flex;
         margin-bottom: 16px;
+        gap:20px;
         .icon-info{
           display: flex;
           margin-right: 25px;
-          img{
-            margin-right: 8px;
+          p{
+            &::after{
+              display: none;
+            }
+          }
+          p{
+            display:block;
+            position: relative;
+            bottom:0px;
+            background-color:transparent;
+            color:$light;
+            padding: 0; 
+            width:auto;
           }
         }
+      }
+      .info-card{
+        margin-bottom: 16px;
       }
     }
   }

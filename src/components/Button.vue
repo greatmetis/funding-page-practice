@@ -1,7 +1,7 @@
 <template>
-    <a type="button" class="btn" @click="btnClick">
+    <button type="button" class="btn" @click="btnClick">
         <slot>Button</slot>
-    </a>
+    </button>
 
     
 </template>

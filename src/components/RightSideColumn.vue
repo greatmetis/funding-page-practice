@@ -10,13 +10,15 @@
                     <p>已發起 1 個專案</p>
                 </div>
             </div>
-            <p>需要點錢錢做些酷酷的東西，拜託各位乾爹乾媽囉！</p>
+            <p class="description">需要點錢錢做些酷酷的東西，拜託各位乾爹乾媽囉！</p>
             <div class="d-flex">
                 <div class="socials d-flex align-items-center" >
-                    <div class="social facebook">
-                        <b-icon icon="facebook" variant="light"></b-icon>
-                    </div>
-                    <b-icon icon="youtube" variant="light" class="social youtube"></b-icon>
+                    <a href="#" class="social d-flex align-items-center justify-content-center">
+                        <b-icon class="social facebook" icon="facebook" variant="white"></b-icon>
+                    </a>
+                    <a href="#" class="social d-flex align-items-center justify-content-center">
+                        <b-icon class="social youtube" icon="youtube" variant="white"></b-icon>
+                    </a>
                 </div>
                 <Button>
                     <b-icon icon="chat-text"></b-icon>
@@ -35,7 +37,7 @@
                         <span>限時優惠</span>
                         <span>2 days 20:05:20</span>
                     </div>
-                    <h5>{{plan.planName}}</h5>
+                    <h5 class="plan-name">{{plan.planName}}</h5>
                     <h4>NT$ {{plan.price}}</h4>
                     <div class="tags d-flex">
                         <p class="tag donated-times">已被贊助88次</p>
@@ -83,6 +85,7 @@ export default {
 $light: #858377;
 $dark: #636057;
 $primary: #ffdf65;
+$warning: #ff7851;
 $bg--light: #f8f9fa;
 $text-color--dark-gray: #494846;
 $text-color--dark-blue: #373a3c;
@@ -116,15 +119,26 @@ $color--gray-light: #e8e8db;
         h5{
             font-weight:400;
         }
+        .description{
+            margin-top: 16px;
+        }
         .socials{
             flex:2;
             height:30px;
+            gap:8px;
             .social{
                 width:30px;
-                // height:30px;
-                color:white;
-                // background-color: $light;
+                height:30px;
+                background-color: $light;
                 border-radius: 50%;
+                padding:7px 5px;
+                transition:all 0.2s;
+                &>*{
+                    margin: 0;
+                }
+                &:hover{
+                    background-color: $warning;
+                }
             }
         }
         .btn{
@@ -134,8 +148,12 @@ $color--gray-light: #e8e8db;
             line-height:18px;
             width:100px;
             height:30px;
+            // gap:4px;
             .b-icon{
                 margin-right: 4px;
+            }
+            &:hover{
+                border: none;
             }
         }
     }
@@ -207,6 +225,18 @@ $color--gray-light: #e8e8db;
                 font-weight:700;
                 line-height:21px;
                 padding:10px;
+            }
+        }
+    }
+}
+
+@media(max-width:576px){
+    .right-side-column{
+        margin-top: 16px;
+
+        .plan-options{
+            h5.plan-name{
+                font-size:1.15rem;
             }
         }
     }

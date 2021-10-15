@@ -1,6 +1,6 @@
 <template>
     <div class="selection-bar">
-        <div class="container selections d-flex">
+        <div class="container selections">
             <router-link class="selection" to="/">專案介紹</router-link>
             <router-link class="selection" to="/faq">常見問答</router-link>
             <router-link class="selection" to="/progress">目前進度</router-link>
@@ -12,7 +12,14 @@
 <script>
 export default {
     name:'SelectionBar',
+    data(){
+        return{
 
+        }
+    },
+    methods:{
+
+    },
 }
 </script>
 
@@ -25,7 +32,13 @@ $bg--light: #f8f9fa;
 $color--gray-light: #e8e8db;
 
 .selection-bar{
+    position: relative;
     border-bottom: $color--gray-light solid 1px;
+    width:100%;
+    background-color: white;
+    position: sticky;
+    top:0;
+    z-index:100;
     .selections{
         .selection{
             margin-right: 16px;
@@ -52,6 +65,7 @@ $color--gray-light: #e8e8db;
             }
         }
     }
+
 }
 
 @keyframes selection{

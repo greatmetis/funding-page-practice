@@ -16,10 +16,15 @@ export default {
 <style lang="scss" scoped>
 .image{
     width:100%;
-    
+    height:auto;
     img{
         width:100%;
         background-color: transparent;
+    }
+    &.img-rounded{
+        img{
+            border-radius: 32px;
+        }
     }
 }
 </style>

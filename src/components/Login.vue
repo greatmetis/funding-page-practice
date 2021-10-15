@@ -7,13 +7,13 @@
             </div>
             <b-form class="login-form" @submit.prevent="">
                 <b-form-group id="input-group-login-account" label="帳號" label-for="login-account">
-                    <b-form-input required type="text" id="login-account" v-model="account"></b-form-input>
+                    <b-form-input required type="email" id="login-account" v-model="account"></b-form-input>
                 </b-form-group>
                 <b-form-group id="input-group-login-password" label="密碼" label-for="login-password">
-                    <b-form-input required type="text" id="login-password" v-model="password"></b-form-input>
+                    <b-form-input required type="password" id="login-password" v-model="password"></b-form-input>
                 </b-form-group>
                 <p class="forget-password">忘記密碼？</p>
-                <Button class="btn-yellow">登入</Button>
+                <Button class="btn-yellow" @btnClick="checkLoginForm">登入</Button>
                 <div class="lead-to-register">
                     <p>還沒有帳號？<router-link to="">註冊一個帳號</router-link> </p>
                 </div>
@@ -38,6 +38,13 @@ export default {
     methods:{
         closeLoginForm(){
             this.$emit('closeLoginForm')
+        },
+        checkLoginForm(){
+            if(this.account.length>0 && this.password.length>0){
+                this.closeLoginForm()
+                return
+            }
+            return
         }
     }
 }
@@ -52,7 +59,6 @@ $bg--light: #f8f9fa;
 $text-color--dark-gray: #494846;
 $text-color--dark-blue: #373a3c;
 $color--gray-light: #e8e8db;
-
 $body-color: $dark;
 
 p{
@@ -71,6 +77,7 @@ h4{
     background-color: rgba(black,0.6);
     z-index:100;
     overflow: hidden;
+
     .header{
         padding: 16px;
         border-bottom: 1px solid $color--gray-light;
